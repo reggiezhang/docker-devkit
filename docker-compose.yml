@@ -1,0 +1,32 @@
+version: '2'
+
+services:
+  mariadb:
+    image: mariadb
+    container_name: mariadb
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=Initial0
+    restart: always
+  rabbitmq:
+    image: rabbitmq:3.6.5-management
+    container_name: rabbitmq
+    ports:
+      - 15672:15672
+      - 5672:5672
+    hostname: rabbitmq
+    restart: always
+  etcd:
+    image: quay.io/coreos/etcd:v3.0.4
+    container_name: etcd
+    ports:
+      - 2379:2379
+    restart: always
+  redis:
+    image: redis:3.2.3-alpine
+    container_name: redis
+    ports:
+      - 6379:6379
+    restart: always
+
