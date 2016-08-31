@@ -3,3 +3,4 @@
 - redis
 - rabbitmq
 - etcd
+- etcd-browser
