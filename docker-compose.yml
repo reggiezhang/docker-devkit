@@ -40,7 +40,7 @@ services:
 #      - 8000:8000
 #    environment:
 #      - ETCD_HOST=localhost
-#      - AUTH_PASS=reggie
+#      - ETCD_PORT=2379
 #    restart: always
   redis:
     image: redis:3.2.3-alpine
