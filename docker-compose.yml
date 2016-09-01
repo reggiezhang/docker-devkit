@@ -33,15 +33,6 @@ services:
       -initial-cluster etcd0=http://127.0.0.1:2380 
       -initial-cluster-state new
     restart: always
-  etcd-browser:
-    image: reggiezhang/etcd-browser
-    container_name: etcd-browser
-    ports:
-      - 8000:8000
-    environment:
-      - ETCD_HOST=localhost
-      - ETCD_PORT=2379
-    restart: always
 #  etcd-browser:
 #    image: reggiezhang/etcd-browser
 #    container_name: etcd-browser
