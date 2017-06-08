@@ -8,7 +8,7 @@ services:
     ports:
       - 8081:8081
     environment:
-      - ME_CONFIG_MONGODB_SERVER=mongodb  
+      - ME_CONFIG_MONGODB_SERVER=mongodb
   mongodb:
     container_name: mongodb
     restart: always
@@ -52,13 +52,13 @@ services:
       - 2379:2379
       - 2380:2380
     command: >
-      /usr/local/bin/etcd -name etcd0  -cors='*' 
-      -advertise-client-urls http://127.0.0.1:2379 
-      -listen-client-urls http://0.0.0.0:2379 
-      -initial-advertise-peer-urls http://127.0.0.1:2380 
-      -listen-peer-urls http://0.0.0.0:2380 
-      -initial-cluster-token etcd 
-      -initial-cluster etcd0=http://127.0.0.1:2380 
+      /usr/local/bin/etcd -name etcd0  -cors='*'
+      -advertise-client-urls http://127.0.0.1:2379
+      -listen-client-urls http://0.0.0.0:2379
+      -initial-advertise-peer-urls http://127.0.0.1:2380
+      -listen-peer-urls http://0.0.0.0:2380
+      -initial-cluster-token etcd
+      -initial-cluster etcd0=http://127.0.0.1:2380
       -initial-cluster-state new
     restart: always
 #  etcd-browser:
@@ -101,7 +101,7 @@ services:
       # Historical port used for the Zipkin HTTP Api
       - 9411:9411
       # Zipkin UI used to be on a separate process listening on port 8080
-      - 8080:9411
+      #- 8080:9411
     depends_on:
       - storage
 
