@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  redis:
+    image: redis:3.2.3-alpine
+    container_name: redis
+    ports:
+      - 6379:6379
+    restart: always
+  storage:
+    image: openzipkin/zipkin-cassandra:1.7.0
+    container_name: cassandra
+    ports:
+      - 9042:9042
+
+
