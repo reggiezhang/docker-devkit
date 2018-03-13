@@ -14,6 +14,8 @@ services:
     restart: always
     image: mongo:3.4.2
     mem_limit: 512m
+    volumes:
+      - -v /mnt:/data/db
     ports:
       - 27017:27017
   zookeeper:
