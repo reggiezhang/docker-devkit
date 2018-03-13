@@ -40,6 +40,8 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=Initial0
     restart: always
+    volumes:
+      - -v /mnt:/var/lib/mysql
   rabbitmq:
     image: rabbitmq:3.6.5-management
     container_name: rabbitmq
